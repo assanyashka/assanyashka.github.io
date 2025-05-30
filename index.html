@@ -601,5 +601,20 @@
             { id: 'nft5', url: 'https://nft.fragment.com/gift/LunarSnake-34446.tgs' },
             { id: 'nft6', url: 'https://nft.fragment.com/gift/SakuraFlower-12955.tgs' }
         ];
+
+        / Since we can't directly load .tgs files without Telegram's CDN, 
+        // we'll use placeholder animations for demonstration
+        nfts.forEach((nft, index) => {
+            const anim = lottie.loadAnimation({
+                container: document.getElementById(nft.id),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: `https://assets1.lottiefiles.com/packages/lf20_${['r5vq7v', 'k7qnx4', 'h4k8pz', 'bq8n6q', 'j5w2tj', 'e3yheq'][index]}.json`
+            });
+        });
+    </script>
+</body>
+</html>
         
         
