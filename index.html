@@ -130,6 +130,54 @@
             transform: translateY(-3px);
         }
         
+        /* Avatar Styles */
+        .avatar-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+        
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+            box-shadow: var(--neon-glow);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .avatar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 42, 109, 0.8);
+        }
+        
+        .avatar::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 50%;
+            border: 2px solid var(--secondary);
+            opacity: 0.6;
+            z-index: -1;
+            animation: rotate 6s linear infinite;
+        }
+        
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
         /* Page Styles */
         .page {
             display: none;
@@ -487,6 +535,11 @@
             .nft-grid {
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
+
+            .avatar {
+                width: 120px;
+                height: 120px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -514,6 +567,11 @@
             
             .info-label {
                 margin-bottom: 5px;
+            }
+
+            .avatar {
+                width: 100px;
+                height: 100px;
             }
         }
         
@@ -556,6 +614,13 @@
             <div class="info-header">
                 <h1>Информация</h1>
                 <p>Всё самое важное обо мне</p>
+            </div>
+            
+            <!-- Avatar Container -->
+            <div class="avatar-container">
+                <div class="avatar">
+                    <img id="tg-avatar" src="https://t.me/i/userpic/320/codermasochist.jpg" alt="Telegram Avatar" />
+                </div>
             </div>
             
             <div class="info-card">
@@ -775,6 +840,17 @@
                 path: nft.url
             });
         });
+        
+        // Telegram avatar update function
+        function updateAvatar() {
+            const username = 'codermasochist';
+            const avatar = document.getElementById('tg-avatar');
+            avatar.src = `https://t.me/i/userpic/320/${username}.jpg?${new Date().getTime()}`;
+        }
+        
+        // Initialize and update avatar every minute
+        updateAvatar();
+        setInterval(updateAvatar, 60000);
     </script>
 </body>
 </html>
