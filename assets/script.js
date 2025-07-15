@@ -1,120 +1,73 @@
-function calculateAge() {
-    const birthDate = new Date(2008, 5, 30);
-    const now = new Date();
-    const years = (now - birthDate) / (1000 * 60 * 60 * 24 * 365.25);
-    document.getElementById('age').textContent = years.toFixed(6) + ' y. o.';
-}
-
-function setupCopyTonButton() {
-    const copyBtn = document.getElementById('copy-ton');
-    if (copyBtn) {
-        copyBtn.addEventListener('click', () => {
-            navigator.clipboard.writeText('addresserror.ton')
-                .then(() => {
-                    const originalText = copyBtn.textContent;
-                    copyBtn.textContent = '✓ Скопировано!';
-                    setTimeout(() => {
-                        copyBtn.textContent = originalText;
-                    }, 2000);
-                })
-                .catch(err => {
-                    console.error('Failed to copy: ', err);
-                });
+// Common for all pages: Sidebar toggle
+document.addEventListener('DOMContentLoaded', function() {
+    // Toggle sidebar
+    const menuBtn = document.querySelector('.menu-btn');
+    const sidebar = document.querySelector('.sidebar');
+    
+    if (menuBtn && sidebar) {
+        menuBtn.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
         });
     }
-}
 
-function updateAvatar() {
-    const username = 'codermasochist';
-    const avatar = document.getElementById('tg-avatar');
-    if (avatar) {
-        const isMobile = window.innerWidth < 768;
-        const size = isMobile ? '160' : '320';
-        avatar.src = `https://t.me/i/userpic/${size}/${username}.jpg?${new Date().getTime()}`;
-    }
-}
-
-function loadNftAnimations() {
-    const nfts = [
-        { id: 'nft1', url: 'https://nft.fragment.com/gift/JellyBunny-58211.lottie.json' },
-        { id: 'nft2', url: 'https://nft.fragment.com/gift/PartySparkler-36813.lottie.json' },
-        { id: 'nft3', url: 'https://nft.fragment.com/gift/JesterHat-22129.lottie.json' },
-        { id: 'nft4', url: 'https://nft.fragment.com/gift/LolPop-227888.lottie.json' },
-        { id: 'nft5', url: 'https://nft.fragment.com/gift/LunarSnake-34446.lottie.json' },
-        { id: 'nft6', url: 'https://nft.fragment.com/gift/SakuraFlower-12955.lottie.json' }
-    ];
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const nftId = entry.target.id;
-                const nft = nfts.find(item => item.id === nftId);
-                
-                if (nft && !entry.target.hasChildNodes()) {
-                    lottie.loadAnimation({
-                        container: entry.target,
-                        renderer: 'svg',
-                        loop: true,
-                        autoplay: true,
-                        path: nft.url
-                    });
-                }
-                
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-    
-    nfts.forEach(nft => {
-        const element = document.getElementById(nft.id);
-        if (element) {
-            observer.observe(element);
+    // Close sidebar when clicking outside
+    document.addEventListener('click', function(event) {
+        if (sidebar && sidebar.classList.contains('open') && 
+            !sidebar.contains(event.target) && 
+            !menuBtn.contains(event.target)) {
+            sidebar.classList.remove('open');
         }
     });
-}
 
-function setActiveNavButton(pageId) {
-    document.querySelectorAll('.nav-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    document.querySelector(`.nav-btn[data-page="${pageId}"]`).classList.add('active');
-}
-
-function setupNftToggle() {
-    const viewNftBtn = document.getElementById('view-nft-btn');
-    const nftContainer = document.getElementById('nft-container');
+    // Info page specific: Rotating aliases
+    const aliases = [
+        "Assa", "Аска", "аса", "кот за столом", "codermasochist", "dolbaeb"
+    ];
+    const aliasesContainer = document.getElementById('rotating-aliases');
     
-    if (viewNftBtn && nftContainer) {
-        viewNftBtn.addEventListener('click', () => {
-            nftContainer.classList.remove('hidden');
-            viewNftBtn.style.display = 'none';
-            loadNftAnimations();
+    if (aliasesContainer) {
+        let index = 0;
+        
+        function rotateAlias() {
+            aliasesContainer.style.opacity = 0;
+            setTimeout(() => {
+                aliasesContainer.textContent = aliases[index];
+                aliasesContainer.style.opacity = 1;
+                index = (index + 1) % aliases.length;
+            }, 500);
+        }
+        
+        // Initial display
+        aliasesContainer.textContent = aliases[0];
+        aliasesContainer.style.opacity = 1;
+        setInterval(rotateAlias, 3000);
+    }
+
+    // Info page: Calculate age
+    const ageSpan = document.getElementById('age');
+    if (ageSpan) {
+        const birthDate = new Date(2008, 5, 30); // June 30, 2008 (month is 0-indexed)
+        const now = new Date();
+        const diff = now - birthDate;
+        const age = diff / (1000 * 60 * 60 * 24 * 365.25); // in years
+        ageSpan.textContent = age.toFixed(6); // e.g., 17.041320
+    }
+
+    // Donate page: Copy to clipboard
+    const copyButtons = document.querySelectorAll('.copy-btn');
+    copyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const textToCopy = this.getAttribute('data-copy');
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                // Change button text to indicate copied
+                const originalText = this.textContent;
+                this.textContent = 'Copied!';
+                setTimeout(() => {
+                    this.textContent = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
         });
-    }
-}
-
-function initPage(pageId) {
-    setActiveNavButton(pageId);
-    document.getElementById(pageId).classList.add('active');
-    
-    if (pageId === 'info') {
-        calculateAge();
-        setInterval(calculateAge, 1000);
-        setupNftToggle();
-        updateAvatar();
-        setInterval(updateAvatar, 300000);
-    }
-    
-    setupCopyTonButton();
-    document.title = `Assa | ${pageId.charAt(0).toUpperCase() + pageId.slice(1)}`;
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    const path = window.location.pathname;
-    let pageId = 'info';
-    
-    if (path.includes('/donate')) pageId = 'donate';
-    else if (path.includes('/links')) pageId = 'links';
-    
-    initPage(pageId);
+    });
 });
