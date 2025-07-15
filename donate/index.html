@@ -1,67 +1,54 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assa | Donate</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Assa | donate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../assets/style.css">
-    <script src="../assets/script.js" defer></script>
 </head>
 <body>
-    <div class="loader" id="loader">
-        <div class="spinner"></div>
-        <div class="loader-text">Загрузка...</div>
+    <div class="menu-btn">
+        <div class="menu-btn__line"></div>
+        <div class="menu-btn__line"></div>
+        <div class="menu-btn__line"></div>
     </div>
-    
+    <div class="sidebar">
+        <ul>
+            <li><a href="/info">info</a></li>
+            <li><a href="/donate">donate</a></li>
+            <li><a href="/links">links</a></li>
+        </ul>
+    </div>
+
     <div class="container">
-        <header>
-            <div class="nav-container">
-                <a href="/inf" class="nav-btn" data-page="info">Info</a>
-                <a href="/donate" class="nav-btn active" data-page="donate">Donate</a>
-                <a href="/links" class="nav-btn" data-page="links">Media Links</a>
+        <h1 class="section-title">Donate</h1>
+        <div class="grid">
+            <div class="card">
+                <i class="fab fa-telegram"></i>
+                <h3>Crypto Bot</h3>
+                <p>@send</p>
+                <a href="http://t.me/send?start=IVg0pGtJJkA3" class="btn">Open</a>
             </div>
-        </header>
-        
-        <section id="donate" class="page">
-            <div class="donate-header">
-                <h1>Поддержать</h1>
-                <p>★</p>
+            <div class="card">
+                <i class="fas fa-wallet"></i>
+                <h3>Ton</h3>
+                <p>wallet address: addresserror.ton</p>
+                <button class="btn copy-btn" data-copy="addresserror.ton">Copy</button>
             </div>
-            
-            <div class="donate-grid">
-                <div class="donate-card">
-                    <div class="donate-icon">
-                        <i class="fab fa-telegram"></i>
-                    </div>
-                    <h2 class="donate-title">Crypto Bot</h2>
-                    <p class="donate-desc">@send</p>
-                    <a href="http://t.me/send?start=IVg0pGtJJkA3" class="donate-btn pulse">Перейти</a>
-                </div>
-                
-                <div class="donate-card">
-                    <div class="donate-icon">
-                        <i class="fas fa-wallet"></i>
-                    </div>
-                    <h2 class="donate-title">Ton</h2>
-                    <p class="donate-desc">Адрес кошелька: addresserror.ton</p>
-                    <button id="copy-ton" class="donate-btn">Скопировать адрес</button>
-                </div>
-                
-                <div class="donate-card">
-                    <div class="donate-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h2 class="donate-title">As: Donate Bot</h2>
-                    <p class="donate-desc">Специальный бот для донатов</p>
-                    <a href="https://t.me/asdonatebot" class="donate-btn pulse">Перейти</a>
-                </div>
+            <div class="card">
+                <i class="fas fa-robot"></i>
+                <h3>As: Donate Bot</h3>
+                <p>бот для донатов в звёздах</p>
+                <a href="https://t.me/asdonatebot" class="btn">Open</a>
             </div>
-        </section>
-        
-        <footer>
-            <p>© 2025 <span class="footer-text">Assa</span> | Created by @codermasochist. ❤️</p>
-        </footer>
+        </div>
     </div>
+
+    <footer>
+        <p>(c) codermasochist. All right reserved.</p>
+    </footer>
+
+    <script src="../assets/script.js"></script>
 </body>
 </html>
