@@ -1,79 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <title>Assa | Donate</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assa | Donate</title>
     <link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <video autoplay muted loop id="bg-video">
+    <video autoplay loop muted id="bgVideo">
         <source src="assets/tipafon.mp4" type="video/mp4">
     </video>
     
-    <div class="menu-btn">
-        <div class="menu-btn__line"></div>
-        <div class="menu-btn__line"></div>
-        <div class="menu-btn__line"></div>
-    </div>
-
-    <nav class="nav">
-        <div class="nav__overlay">
-            <ul class="nav__list">
-                <li class="nav__item"><a href="info.html" class="nav__link">Info</a></li>
-                <li class="nav__item"><a href="donate.html" class="nav__link">Donate</a></li>
-                <li class="nav__item"><a href="links.html" class="nav__link">Links</a></li>
-            </ul>
+    <header>
+        <a href="index.html" class="home-btn">Main Page</a>
+        <div class="menu-toggle" id="menuToggle">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
+    </header>
+
+    <nav id="sideMenu">
+        <a href="donate.html">Donate</a>
+        <a href="project.html">Project</a>
+        <a href="links.html">Links</a>
     </nav>
 
-    <div class="container">
-        <header class="page-header">
-            <h1>поддержать <i class="fas fa-heart"></i></h1>
-        </header>
-
-        <div class="donation-cards">
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fab fa-telegram"></i>
-                </div>
-                <h2 class="card-title">Crypto Bot</h2>
-                <p class="card-description">Telegram bot link</p>
-                <a href="https://t.me/send" target="_blank" class="card-button">
-                    @send <i class="fab fa-telegram"></i>
-                </a>
+    <main class="container">
+        <h1>поддержать ♥</h1>
+        
+        <div class="donate-grid">
+            <div class="donate-card">
+                <i class="fab fa-telegram"></i>
+                <h3>Crypto Bot</h3>
+                <p>Telegram bot @send</p>
             </div>
-
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fas fa-wallet"></i>
-                </div>
-                <h2 class="card-title">Ton</h2>
-                <p class="card-description">wallet address</p>
-                <div class="address-box">
-                    <span>addresserror.ton</span>
-                    <div class="copy-container">
-                        <button class="copy-btn">
-                            <i class="fas fa-copy"></i>
-                        </button>
-                        <span class="copy-notification">Copied!</span>
-                    </div>
-                </div>
+            
+            <div class="donate-card">
+                <i class="fas fa-wallet"></i>
+                <h3>Ton</h3>
+                <p>error.ton</p>
+                <button class="copy-btn">Copy</button>
             </div>
-
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fab fa-telegram"></i>
-                </div>
-                <h2 class="card-title">As: Donate Bot</h2>
-                <p class="card-description">Telegram bot for donations</p>
-                <a href="#" target="_blank" class="card-button pulsate">
-                    Donate <i class="fab fa-telegram"></i>
-                </a>
+            
+            <div class="donate-card">
+                <i class="fas fa-donate"></i>
+                <h3>As: Donate Bot</h3>
+                <button class="click-btn pulse-btn">Donate</button>
             </div>
         </div>
-    </div>
+    </main>
 
     <footer>
         <p>(c) codermasochist. All right reserved.</p>
