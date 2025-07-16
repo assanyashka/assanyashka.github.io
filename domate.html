@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assa | Donate</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="menu-btn">
+        <div class="menu-btn__line"></div>
+        <div class="menu-btn__line"></div>
+        <div class="menu-btn__line"></div>
+    </div>
+
+    <nav class="nav">
+        <div class="nav__overlay">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="info.html" class="nav__link">Info</a></li>
+                <li class="nav__item"><a href="donate.html" class="nav__link">Donate</a></li>
+                <li class="nav__item"><a href="links.html" class="nav__link">Links</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="page-header">
+            <h1>поддержать <i class="fas fa-heart"></i></h1>
+        </header>
+
+        <div class="donation-cards">
+            <!-- Card 1: Crypto Bot -->
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fab fa-telegram"></i>
+                </div>
+                <h2 class="card-title">Crypto Bot</h2>
+                <p class="card-description">Telegram bot link</p>
+                <a href="https://t.me/send" target="_blank" class="card-button">
+                    @send <i class="fab fa-telegram"></i>
+                </a>
+            </div>
+
+            <!-- Card 2: Ton -->
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-wallet"></i>
+                </div>
+                <h2 class="card-title">Ton</h2>
+                <p class="card-description">wallet address</p>
+                <div class="address-box">
+                    <span>addresserror.ton</span>
+                    <button class="copy-btn" onclick="copyToClipboard('addresserror.ton')">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3: As: Donate Bot -->
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fab fa-telegram"></i>
+                </div>
+                <h2 class="card-title">As: Donate Bot</h2>
+                <p class="card-description">Telegram bot for donations</p>
+                <a href="#" target="_blank" class="card-button pulsate">
+                    Donate <i class="fab fa-telegram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>(c) codermasochist. All right reserved.</p>
+    </footer>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>
