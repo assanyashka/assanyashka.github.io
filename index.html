@@ -1,14 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <title>Assa</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assa</title>
-    <script>
-        window.location.href = "/info.html";
-    </script>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    Redirecting to the info page...
+    <video autoplay loop muted id="bgVideo">
+        <source src="assets/tipafon.mp4" type="video/mp4">
+    </video>
+    
+    <header>
+        <a href="index.html" class="home-btn">Main Page</a>
+        <div class="visit-counter">
+            <img src="https://count.getloli.com/@assa?name=assa&theme=asoul&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto" alt="Visitor counter">
+        </div>
+        <div class="menu-toggle" id="menuToggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <nav id="sideMenu">
+        <a href="donate.html">Donate</a>
+        <a href="project.html">Project</a>
+        <a href="links.html">Links</a>
+    </nav>
+
+    <main class="container">
+        <img src="https://t.me/i/userpic/160/codermasochist.jpg" alt="Avatar" class="avatar">
+        <h1>Assa</h1>
+        <h2><a href="https://t.me/codermasochist">@codermasochist</a></h2>
+        <p>he/him/any</p>
+        
+        <div class="info-card">
+            <h3>a little about me ♡</h3>
+            <p>Name: Àssa</p>
+            <p>Birthdate: 30.06.2008</p>
+            <p>Age: <span id="age">0</span></p>
+            <p>Gender: Male</p>
+            <p>Hobbies: eat, anime, coding & sleep.</p>
+        </div>
+        
+        <audio controls loop id="player">
+            <source src="assets/music.mp3" type="audio/mp3">
+        </audio>
+    </main>
+
+    <footer>
+        <p>(c) codermasochist. All right reserved.</p>
+    </footer>
+
+    <script src="assets/script.js"></script>
 </body>
 </html>
