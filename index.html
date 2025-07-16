@@ -1,59 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Assa</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assa</title>
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <video autoplay loop muted id="bgVideo">
-        <source src="assets/tipafon.mp4" type="video/mp4">
-    </video>
+    <div class="video-container">
+        <video autoplay muted loop id="bgVideo">
+            <source src="assets/tipafon.mp4" type="video/mp4">
+        </video>
+    </div>
     
-    <header>
-        <a href="index.html" class="home-btn">Main Page</a>
-        <div class="visit-counter">
-            <img src="https://count.getloli.com/@assa?name=assa&theme=asoul&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto" alt="Visitor counter">
-        </div>
-        <div class="menu-toggle" id="menuToggle">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </header>
-
-    <nav id="sideMenu">
-        <a href="donate.html">Donate</a>
-        <a href="project.html">Project</a>
-        <a href="links.html">Links</a>
-    </nav>
-
-    <main class="container">
-        <img src="https://t.me/i/userpic/160/codermasochist.jpg" alt="Avatar" class="avatar">
-        <h1>Assa</h1>
-        <h2><a href="https://t.me/codermasochist">@codermasochist</a></h2>
-        <p>he/him/any</p>
+    <div class="content">
+        <header>
+            <a href="index.html" class="main-page-btn">Main Page</a>
+            <div class="menu-toggle" id="menuToggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </header>
         
-        <div class="info-card">
-            <h3>a little about me ♡</h3>
+        <div class="counter">
+            <img src="https://count.getloli.com/@assa?name=assa&theme=asoul&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto" alt="Visitor Counter">
+        </div>
+        
+        <div class="avatar-container">
+            <img src="https://t.me/i/userpic/160/codermasochist.jpg" alt="Avatar" class="avatar">
+        </div>
+        
+        <div class="profile-info">
+            <h1>Assa</h1>
+            <a href="https://t.me/codermasochist" class="username">@codermasochist</a>
+            <p>(he/him/any)</p>
+        </div>
+        
+        <div class="bio">
+            <p class="bio-title">a little about me ♡</p>
             <p>Name: Àssa</p>
             <p>Birthdate: 30.06.2008</p>
-            <p>Age: <span id="age">0</span></p>
+            <p id="ageDisplay">Age: Calculating...</p>
             <p>Gender: Male</p>
             <p>Hobbies: eat, anime, coding & sleep.</p>
         </div>
         
-        <audio controls loop id="player">
-            <source src="assets/music.mp3" type="audio/mp3">
-        </audio>
-    </main>
-
-    <footer>
-        <p>(c) codermasochist. All right reserved.</p>
-    </footer>
-
+        <div class="music-player">
+            <audio id="bgMusic" loop>
+                <source src="assets/music.mp3" type="audio/mpeg">
+            </audio>
+            <button id="playBtn"><i class="fas fa-play"></i></button>
+            <div class="music-info">Background Music</div>
+        </div>
+        
+        <footer>
+            <p>(c) codermasochist. All right reserved.</p>
+        </footer>
+    </div>
+    
+    <nav id="sideMenu">
+        <a href="donate.html">donate</a>
+        <a href="project.html">project</a>
+        <a href="links.html">links</a>
+    </nav>
+    
     <script src="assets/script.js"></script>
 </body>
 </html>
