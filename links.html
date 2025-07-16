@@ -1,84 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <title>Assa | Links</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assa | Links</title>
     <link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <video autoplay muted loop id="bg-video">
+    <video autoplay loop muted id="bgVideo">
         <source src="assets/tipafon.mp4" type="video/mp4">
     </video>
     
-    <div class="menu-btn">
-        <div class="menu-btn__line"></div>
-        <div class="menu-btn__line"></div>
-        <div class="menu-btn__line"></div>
-    </div>
-
-    <nav class="nav">
-        <div class="nav__overlay">
-            <ul class="nav__list">
-                <li class="nav__item"><a href="info.html" class="nav__link">Info</a></li>
-                <li class="nav__item"><a href="donate.html" class="nav__link">Donate</a></li>
-                <li class="nav__item"><a href="links.html" class="nav__link">Links</a></li>
-            </ul>
+    <header>
+        <a href="index.html" class="home-btn">Main Page</a>
+        <div class="menu-toggle" id="menuToggle">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
+    </header>
+
+    <nav id="sideMenu">
+        <a href="donate.html">Donate</a>
+        <a href="project.html">Project</a>
+        <a href="links.html">Links</a>
     </nav>
 
-    <div class="container">
-        <header class="page-header">
-            <h1>Social Media</h1>
-        </header>
-
-        <div class="social-cards">
+    <main class="container">
+        <h1>Assa | Links</h1>
+        <h2>Social Media</h2>
+        
+        <div class="social-grid">
             <div class="social-card">
-                <div class="social-icon">
-                    <i class="fab fa-telegram"></i>
-                </div>
-                <h2 class="social-name">Сигны</h2>
-                <p class="social-description">Telegram channel</p>
-                <a href="https://t.me/cilsex" target="_blank" class="social-button">
-                    жмяк <i class="fas fa-arrow-right"></i>
-                </a>
+                <i class="fab fa-telegram"></i>
+                <h3>Сигны</h3>
+                <p>Telegram @cilsex</p>
+                <a href="#" class="click-btn">жмяк</a>
             </div>
-
+            
             <div class="social-card">
-                <div class="social-icon">
-                    <i class="fab fa-tiktok"></i>
-                </div>
-                <h2 class="social-name">TikTok</h2>
-                <p class="social-description">@codermasochist</p>
-                <a href="https://tiktok.com/@codermasochist" target="_blank" class="social-button">
-                    жмяк <i class="fas fa-arrow-right"></i>
-                </a>
+                <i class="fab fa-tiktok"></i>
+                <h3>TikTok</h3>
+                <p>@codermasochist</p>
+                <a href="#" class="click-btn">жмяк</a>
             </div>
-
+            
             <div class="social-card">
-                <div class="social-icon">
-                    <i class="fab fa-telegram"></i>
-                </div>
-                <h2 class="social-name">makimalove</h2>
-                <p class="social-description">Telegram channel</p>
-                <a href="https://t.me/makimalove" target="_blank" class="social-button">
-                    жмяк <i class="fas fa-arrow-right"></i>
-                </a>
+                <i class="fab fa-telegram"></i>
+                <h3>Telegram</h3>
+                <p>@makimalove</p>
+                <a href="#" class="click-btn">жмяк</a>
             </div>
-
+            
             <div class="social-card">
-                <div class="social-icon">
-                    <i class="fab fa-github"></i>
-                </div>
-                <h2 class="social-name">GitHub</h2>
-                <p class="social-description">codermasochist</p>
-                <a href="https://github.com/codermasochist" target="_blank" class="social-button">
-                    жмяк <i class="fas fa-arrow-right"></i>
-                </a>
+                <i class="fab fa-github"></i>
+                <h3>GitHub</h3>
+                <p>codermasochist</p>
+                <a href="#" class="click-btn">жмяк</a>
             </div>
         </div>
-    </div>
+    </main>
 
     <footer>
         <p>(c) codermasochist. All right reserved.</p>
