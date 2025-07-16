@@ -1,73 +1,58 @@
-// Common for all pages: Sidebar toggle
-document.addEventListener('DOMContentLoaded', function() {
-    // Toggle sidebar
-    const menuBtn = document.querySelector('.menu-btn');
-    const sidebar = document.querySelector('.sidebar');
-    
-    if (menuBtn && sidebar) {
-        menuBtn.addEventListener('click', function() {
-            sidebar.classList.toggle('open');
-        });
-    }
+// Menu toggle
+const menuBtn = document.querySelector('.menu-btn');
+const nav = document.querySelector('.nav');
 
-    // Close sidebar when clicking outside
-    document.addEventListener('click', function(event) {
-        if (sidebar && sidebar.classList.contains('open') && 
-            !sidebar.contains(event.target) && 
-            !menuBtn.contains(event.target)) {
-            sidebar.classList.remove('open');
-        }
-    });
+menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('active');
+    nav.classList.toggle('active');
+});
 
-    // Info page specific: Rotating aliases
-    const aliases = [
-        "Assa", "Аска", "аса", "кот за столом", "codermasochist", "dolbaeb"
-    ];
-    const aliasesContainer = document.getElementById('rotating-aliases');
-    
-    if (aliasesContainer) {
-        let index = 0;
-        
-        function rotateAlias() {
-            aliasesContainer.style.opacity = 0;
-            setTimeout(() => {
-                aliasesContainer.textContent = aliases[index];
-                aliasesContainer.style.opacity = 1;
-                index = (index + 1) % aliases.length;
-            }, 500);
-        }
-        
-        // Initial display
-        aliasesContainer.textContent = aliases[0];
-        aliasesContainer.style.opacity = 1;
-        setInterval(rotateAlias, 3000);
-    }
-
-    // Info page: Calculate age
-    const ageSpan = document.getElementById('age');
-    if (ageSpan) {
-        const birthDate = new Date(2008, 5, 30); // June 30, 2008 (month is 0-indexed)
-        const now = new Date();
-        const diff = now - birthDate;
-        const age = diff / (1000 * 60 * 60 * 24 * 365.25); // in years
-        ageSpan.textContent = age.toFixed(6); // e.g., 17.041320
-    }
-
-    // Donate page: Copy to clipboard
-    const copyButtons = document.querySelectorAll('.copy-btn');
-    copyButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const textToCopy = this.getAttribute('data-copy');
-            navigator.clipboard.writeText(textToCopy).then(() => {
-                // Change button text to indicate copied
-                const originalText = this.textContent;
-                this.textContent = 'Copied!';
-                setTimeout(() => {
-                    this.textContent = originalText;
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
-            });
-        });
+// Close menu when clicking on a link
+const navLinks = document.querySelectorAll('.nav__link');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menuBtn.classList.remove('active');
+        nav.classList.remove('active');
     });
 });
+
+// Rotating nicknames for the info page
+if (document.getElementById('nickname-cycle')) {
+    const nicknames = ["Assa", "Аска", "аса", "кот за столом", "codermasochist", "dolbaeb"];
+    let currentIndex = 0;
+    const nicknameElement = document.getElementById('nickname-cycle');
+    
+    function updateNickname() {
+        nicknameElement.textContent = nicknames[currentIndex];
+        currentIndex = (currentIndex + 1) % nicknames.length;
+    }
+    
+    // Initial update
+    updateNickname();
+    // Change every 3 seconds
+    setInterval(updateNickname, 3000);
+}
+
+// Age calculation for the info page
+if (document.getElementById('age')) {
+    const birthDate = new Date(2008, 5, 30); // Note: months are 0-indexed (5 = June)
+    const currentDate = new Date();
+    
+    // Calculate the difference in milliseconds
+    let diff = currentDate - birthDate;
+    
+    // Convert to years (with decimals)
+    const years = diff / (1000 * 60 * 60 * 24 * 365.25);
+    
+    // Format to 6 decimal places
+    document.getElementById('age').textContent = years.toFixed(6);
+}
+
+// Copy to clipboard function for the donate page
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        alert('Copied to clipboard: ' + text);
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+}
