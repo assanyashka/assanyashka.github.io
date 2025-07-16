@@ -297,6 +297,25 @@ footer {
     font-size: 14px;
 }
 
+.donate-btn {
+    background: rgba(255, 87, 87, 0.2);
+    color: white;
+    border: 1px solid #ff5757;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.donate-btn:hover {
+    background: rgba(255, 87, 87, 0.4);
+    box-shadow: 0 0 15px rgba(255, 87, 87, 0.4);
+}
+
 .project-card a:hover, .link-card button:hover, .copy-btn:hover {
     background: rgba(255, 87, 87, 0.4);
     box-shadow: 0 0 15px rgba(255, 87, 87, 0.4);
