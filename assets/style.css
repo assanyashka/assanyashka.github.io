@@ -24,6 +24,7 @@ body {
     z-index: -2;
     overflow: hidden;
     background: black;
+}
 
 .video-container video {
     width: 100%;
