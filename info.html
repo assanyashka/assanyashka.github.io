@@ -3,50 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assa | info</title>
+    <title>Assa | Info</title>
+    <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
+    <!-- Hamburger Menu Button -->
     <div class="menu-btn">
         <div class="menu-btn__line"></div>
         <div class="menu-btn__line"></div>
         <div class="menu-btn__line"></div>
     </div>
-    <div class="sidebar">
-        <ul>
-            <li><a href="/info">info</a></li>
-            <li><a href="/donate">donate</a></li>
-            <li><a href="/links">links</a></li>
-        </ul>
-    </div>
+
+    <!-- Navigation Overlay -->
+    <nav class="nav">
+        <div class="nav__overlay">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="info.html" class="nav__link">Info</a></li>
+                <li class="nav__item"><a href="donate.html" class="nav__link">Donate</a></li>
+                <li class="nav__item"><a href="links.html" class="nav__link">Links</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <div class="container">
-        <div class="visit-counter">
-            <img src="https://count.getloli.com/@assa?name=assa&theme=asoul&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto" alt="Visitor counter">
+        <!-- Visit Counter -->
+        <div class="counter">
+            <img src="https://count.getloli.com/@assa?name=assa&theme=asoul&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto" alt="Visitor Counter">
         </div>
-        <div class="avatar-frame">
-            <img src="https://t.me/i/userpic/160/codermasochist.jpg" alt="Assa's Avatar">
+
+        <!-- Avatar -->
+        <div class="avatar">
+            <img src="https://t.me/i/userpic/160/codermasochist.jpg" alt="Assa">
         </div>
+
+        <!-- Name and Pronouns -->
         <div class="name">
-            Assa<br>
-            codermasochist<br>
-            <span>(he/him/any)</span>
+            <h1>Assa</h1>
+            <h2>codermasochist</h2>
+            <p>(he/him/any)</p>
         </div>
-        <div class="aliases">
-            <div id="rotating-aliases">
-                <!-- Aliases will be inserted by JavaScript -->
+
+        <!-- Rotating Nicknames -->
+        <div class="nicknames">
+            <div class="nickname-cycle" id="nickname-cycle">
+                <!-- Will be filled by JavaScript -->
             </div>
         </div>
-        <div class="section-title">немного обо мне///</div>
-        <div class="bio">
-            <p>Whoami: Assa.</p>
-            <p>Birthdate: 30.06.2008.</p>
-            <p>Age: <span id="age"></span> y. o.</p>
-            <p>Gender: Male.</p>
-            <p>Hobby: eat, anime, coding & sleep.</p>
-            <p>(the list will be updated...?)</p>
-            <p>pum pum pum.</p>
+
+        <!-- About Section -->
+        <div class="about">
+            <h3>немного обо мне///</h3>
+            <ul>
+                <li><strong>Whoami:</strong> Assa.</li>
+                <li><strong>Birthdate:</strong> 30.06.2008.</li>
+                <li><strong>Age:</strong> <span id="age"></span> y. o.</li>
+                <li><strong>Gender:</strong> Male.</li>
+                <li><strong>Hobby:</strong> eat, anime, coding & sleep.</li>
+                <li>(the list will be updated...?)</li>
+                <li>pum pum pum.</li>
+            </ul>
         </div>
     </div>
 
@@ -54,6 +70,6 @@
         <p>(c) codermasochist. All right reserved.</p>
     </footer>
 
-    <script src="../assets/script.js"></script>
+    <script src="assets/script.js"></script>
 </body>
 </html>
