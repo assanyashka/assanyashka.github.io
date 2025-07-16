@@ -1,13 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menuToggle');
     const sideMenu = document.getElementById('sideMenu');
-    const body = document.body;
     const playBtn = document.getElementById('playBtn');
     const bgMusic = document.getElementById('bgMusic');
     const ageDisplay = document.getElementById('ageDisplay');
     
-    menuToggle.addEventListener('click', function() {
-        body.classList.toggle('menu-open');
+    function toggleMenu() {
+        document.body.classList.toggle('menu-open');
+    }
+    
+    function closeMenu() {
+        document.body.classList.remove('menu-open');
+    }
+    
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleMenu();
+        });
+    }
+    
+    document.addEventListener('click', function(e) {
+        if (document.body.classList.contains('menu-open') && 
+            !sideMenu.contains(e.target) && 
+            !menuToggle.contains(e.target)) {
+            closeMenu();
+        }
     });
     
     if (playBtn && bgMusic) {
