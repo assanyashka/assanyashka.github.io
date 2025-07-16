@@ -33,7 +33,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    filter: none;
+    filter: blur(2px);
 }
 
 .content {
