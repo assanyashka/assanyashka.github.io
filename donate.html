@@ -1,61 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Assa | Donate</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assa | Donate</title>
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <video autoplay loop muted id="bgVideo">
-        <source src="assets/tipafon.mp4" type="video/mp4">
-    </video>
+    <div class="video-container">
+        <video autoplay muted loop id="bgVideo">
+            <source src="assets/tipafon.mp4" type="video/mp4">
+        </video>
+    </div>
     
-    <header>
-        <a href="index.html" class="home-btn">Main Page</a>
-        <div class="menu-toggle" id="menuToggle">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </header>
-
-    <nav id="sideMenu">
-        <a href="donate.html">Donate</a>
-        <a href="project.html">Project</a>
-        <a href="links.html">Links</a>
-    </nav>
-
-    <main class="container">
-        <h1>поддержать ♥</h1>
+    <div class="content">
+        <header>
+            <a href="index.html" class="main-page-btn">Main Page</a>
+            <div class="menu-toggle" id="menuToggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </header>
         
-        <div class="donate-grid">
-            <div class="donate-card">
+        <h2 class="donate-header">поддержать ♥</h2>
+        
+        <div class="donation-grid">
+            <div class="donation-card">
                 <i class="fab fa-telegram"></i>
                 <h3>Crypto Bot</h3>
-                <p>Telegram bot @send</p>
+                <p>Telegram @send</p>
             </div>
             
-            <div class="donate-card">
+            <div class="donation-card">
                 <i class="fas fa-wallet"></i>
                 <h3>Ton</h3>
-                <p>error.ton</p>
+                <p>walletaddresserror.ton</p>
                 <button class="copy-btn">Copy</button>
             </div>
             
-            <div class="donate-card">
-                <i class="fas fa-donate"></i>
+            <div class="donation-card pulsate">
+                <i class="fas fa-robot"></i>
                 <h3>As: Donate Bot</h3>
-                <button class="click-btn pulse-btn">Donate</button>
+                <p>Telegram bot</p>
             </div>
         </div>
-    </main>
-
-    <footer>
-        <p>(c) codermasochist. All right reserved.</p>
-    </footer>
-
+        
+        <footer>
+            <p>(c) codermasochist. All right reserved.</p>
+        </footer>
+    </div>
+    
+    <nav id="sideMenu">
+        <a href="donate.html">donate</a>
+        <a href="project.html">project</a>
+        <a href="links.html">links</a>
+    </nav>
+    
     <script src="assets/script.js"></script>
 </body>
 </html>
