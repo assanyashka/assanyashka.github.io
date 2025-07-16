@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <video autoplay muted loop id="bg-video">
+        <source src="assets/tipafon.mp4" type="video/mp4">
+    </video>
+    
     <div class="menu-btn">
         <div class="menu-btn__line"></div>
         <div class="menu-btn__line"></div>
@@ -30,7 +34,6 @@
         </header>
 
         <div class="donation-cards">
-            <!-- Card 1: Crypto Bot -->
             <div class="card">
                 <div class="card-icon">
                     <i class="fab fa-telegram"></i>
@@ -42,7 +45,6 @@
                 </a>
             </div>
 
-            <!-- Card 2: Ton -->
             <div class="card">
                 <div class="card-icon">
                     <i class="fas fa-wallet"></i>
@@ -51,13 +53,15 @@
                 <p class="card-description">wallet address</p>
                 <div class="address-box">
                     <span>addresserror.ton</span>
-                    <button class="copy-btn" onclick="copyToClipboard('addresserror.ton')">
-                        <i class="fas fa-copy"></i>
-                    </button>
+                    <div class="copy-container">
+                        <button class="copy-btn">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                        <span class="copy-notification">Copied!</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- Card 3: As: Donate Bot -->
             <div class="card">
                 <div class="card-icon">
                     <i class="fab fa-telegram"></i>
