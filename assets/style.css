@@ -34,6 +34,13 @@ body {
     top: 0;
     left: 0;
     filter: none;
+    object-position: center center;
+}
+
+@media (max-width: 768px) {
+    .video-container video {
+        object-fit: cover;
+    }
 }
 
 .content {
