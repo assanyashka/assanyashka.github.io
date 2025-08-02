@@ -334,16 +334,6 @@ footer {
     text-shadow: 0 0 10px rgba(255, 87, 87, 0.7);
 }
 
-.pulsate {
-    animation: pulsate 2s infinite;
-}
-
-@keyframes pulsate {
-    0% { box-shadow: 0 0 0 rgba(255, 87, 87, 0.4); }
-    50% { box-shadow: 0 0 20px rgba(255, 87, 87, 0.8); }
-    100% { box-shadow: 0 0 0 rgba(255, 87, 87, 0.4); }
-}
-
 @media (max-width: 768px) {
     .projects-grid, .donation-grid, .links-grid {
         grid-template-columns: 1fr;
